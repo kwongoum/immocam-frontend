@@ -1,0 +1,9 @@
+ <h2> EDIT</h2>
+<div *ngIf="realty">
+    IT IS  {{id}} <br>
+  <form [formGroup]="realtyForm">
+  <label>DESCRIPTION:</label> <input value="{{realty.description}}" formControlName="description"> <br>
+  <label>PRICE:</label> <input value="{{realty.price}}" formControlName="price"> <br>
+  <button  type = "submit" (click)="onUpdate()" > VALIDATE </button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<h2>
+  Remplir le formulaire pour votre profil:
+</h2>
+<form [formGroup]="userForm" (ngSubmit)="onSignUp()">
+
+  <label>FIRSTNAME</label> <input type="text" formControlName="firstName"> <br>
+  <label>LASTNAME</label> <input type="text" formControlName="lastName"> <br>
+  <label>EMAIL</label> <input type="text" formControlName="email"> <br>
+  <label>PASSWORD</label> <input type="text" formControlName="password"> <br>
+
+  <label>PHONE</label> <input type="number" formControlName="phone"> <br>
+
+  <label>COUNTRY</label> <input type="number" formControlName="country"> <br>
+  <label>LANGUAGE</label> <input type="number" formControlName="language"> <br> <br>
+ <button type ="submit"> Enregistrer</button>
+</form>

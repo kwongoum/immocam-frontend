@@ -1,0 +1,47 @@
+<h2>
+   Connexion !
+</h2>
+
+<form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+  <div >
+    <label>Email:</label>
+    <input type="email"   formControlName="email"  />
+
+    <div *ngIf="(signInForm.get('email').invalid && signInForm.get('email').touched) ||
+     signInForm.get('email').dirty">
+
+      <small  style="color: red" *ngIf="signInForm.get('email').errors?.required">* Email est requis </small>
+      <small style="color: red"  *ngIf="signInForm.get('email').errors?.email">Email est  invalide </small>
+
+     </div>
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password"  [class.is-invalid] = "signInForm.get('password').invalid
+    && signInForm.get('password').touched" class="form-control" formControlName="password" />
+    <div *ngIf="(signInForm.get('password').invalid && signInForm.get('password').touched)
+     || signInForm.get('password').dirty" >
+      <small style="color: red" *ngIf="signInForm.get('password').errors?.required" >* Password est requis</small>
+       </div>
+
+
+  </div>
+
+  <button type="submit" [disabled]=signInForm.invalid> ENVOYER</button>
+</form>
+
+
+
+  <!-- <form  [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+  <div class="form-group">
+  <label>Login/Email:</label>
+  <input type ="text" [class.is-invalid]="signInForm.get('email').invalid && signInForm.get('email').touched"  formControlName="email" placeholder="entrer votre email" >
+  </div>
+   <span *ngIf="signInForm.get('email').errors?.required" style="color:red"> email requis *</span><br>
+  <label>Password:</label> <input type="password" formControlName="password" placeholder="entrer votre mot de passe" />
+  <span style="color:red"> requis *</span>
+  <br> <br>
+  <button type="submit"  [disabled] = signInForm.invalid>Valider</button>
+</form>
+-->

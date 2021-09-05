@@ -1,0 +1,16 @@
+           <app-signout></app-signout>
+<h2>
+ PUBLICATION: listes des biens:
+</h2>
+
+<div  *ngFor="let realty of realties">
+   <ul>
+      <li> {{realty.id}} {{realty.description}} ==>  {{realty.price|number}}
+ <button  routerLink="/edit-realty/{{realty.id}}"> Update</button>
+
+         &nbsp;&nbsp;
+        <button (click)="onDeleteSelectedRealty(realty.id)"> Delete</button>
+      </li>
+   </ul>
+
+</div>

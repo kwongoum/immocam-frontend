@@ -1,0 +1,26 @@
+<h2>
+ Informations sur le bien:
+</h2>
+<form [formGroup]="addForm" (ngSubmit)="onAdd()">
+
+   <label>DESCRIPTION</label><input type = "text"  id="description" formControlName="description"> <br>
+  <label>PRICE</label> <input type="text" formControlName="price"> <br>
+  <label>QUANTITY</label> <input type="text" formControlName="quantity"> <br>
+  <label>CATEGORY</label> <input type="text" formControlName="category"><br>
+  <label>APPLY NUMBER</label> <input type="text" formControlName="appliesNumbers"><br>
+  <!-- "id": 9,
+   "appliesNumbers
+  "description": null,
+  "price": 0.0,
+  "quantity": 0,
+  "appliesNumbers": 0,
+  "type": null,
+  "status": 0,
+  "deleteIntegrity": false,
+  "createdAt": null,
+  "updatedAt": null,
+  "realtyCategory": null,
+  "town": null
+  -->
+   <button type ="submit" > Enregister</button>
+</form>
